@@ -1,6 +1,11 @@
+
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:moslem/Home_Screen.dart';
+import 'package:moslem/my_theme.dart';
+
+import 'Home/quran/Sura_details.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(statusBarColor: Colors.transparent));
@@ -14,12 +19,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: ThemeData(
+      theme: MyTheme.lightTheme,
 
-      ),
       initialRoute: HomeScreen.routeName,
       routes: {
-        HomeScreen.routeName:(_)=>HomeScreen()
+        HomeScreen.routeName:(_)=>HomeScreen(),
+        SuraDetails.routeName:(_)=>SuraDetails()
       },
     );
   }
