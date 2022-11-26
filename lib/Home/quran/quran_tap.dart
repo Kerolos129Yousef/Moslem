@@ -143,7 +143,7 @@ class QuranTap extends StatelessWidget {
         Expanded(
           child: ListView.separated(
             itemBuilder: (_, index) {
-              return SuraWidget(names[index]) ;
+              return SuraWidget(names[index],index) ;
             },
             itemCount: names.length,
             separatorBuilder: (_, index) {

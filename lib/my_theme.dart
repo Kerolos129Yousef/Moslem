@@ -6,13 +6,20 @@ class MyTheme {
     primaryColor: primaryColor,
       scaffoldBackgroundColor: Colors.transparent,
       appBarTheme: AppBarTheme(
+        iconTheme: IconThemeData(
+          color: Colors.black
+        ),
         elevation: 0,
         backgroundColor: Colors.transparent,
         titleTextStyle: TextStyle(color: Colors.black,fontSize: 25,fontWeight: FontWeight.w500),
-
+        centerTitle: true
 
       ),
       textTheme: TextTheme(
+          bodyText2:TextStyle(
+            fontWeight:FontWeight.w700,
+            fontSize: 16
+          ),
         headline4: TextStyle(
           fontSize: 20,
           color: Colors.black
