@@ -137,8 +137,10 @@ class QuranTap extends StatelessWidget {
             ),
             alignment: Alignment.center,
             child: Text(
-              "Name",
-              style: Theme.of(context).textTheme.headline4,
+              "أسم السورة",
+              style: TextStyle(
+                fontSize: 20
+              ),
             )),
         Expanded(
           child: ListView.separated(

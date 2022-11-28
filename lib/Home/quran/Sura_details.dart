@@ -65,7 +65,7 @@ class _SuraDetailsState extends State<SuraDetails> {
   void readFile(int index) async {
     String content =
         await rootBundle.loadString("assests/files/${index + 1}.txt");
-    List<String> lines = content.split("\r\n");
+    List<String> lines = content.trim().split("\r\n");
     verses = lines;
     print(lines);
     setState(() {});
