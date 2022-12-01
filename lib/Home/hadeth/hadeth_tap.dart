@@ -16,7 +16,7 @@ class _HadethTapState extends State<HadethTap> {
   Widget build(BuildContext context) {
     if(allahadeth.isEmpty)
     readHadethFile();
-    return Column(
+    return allahadeth.isEmpty?Center(child: CircularProgressIndicator(color: Theme.of(context).primaryColor,)): Column(
       children: [
         Center(child: Image.asset("assests/images/hadeth_logo.png")),
         Container(

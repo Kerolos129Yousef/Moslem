@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:moslem/Home/hadeth/hadeth_tap.dart';
+import 'package:moslem/Home/setting/Setting_tap.dart';
 import 'package:moslem/my_theme.dart';
 import 'package:moslem/Home/quran/quran_tap.dart';
 import 'package:moslem/Home/radio/radio_tap.dart';
 import 'package:moslem/Home/tasbeh/tasbeh_tap.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class HomeScreen extends StatefulWidget {
   static const String routeName = "Home";
 
@@ -25,7 +26,7 @@ class _HomeScreenState extends State<HomeScreen> {
         appBar: AppBar(
           title: Center(
             child: Text(
-              "Muslem",
+              AppLocalizations.of(context)!.appTitle,
             ),
           ),
         ),
@@ -42,16 +43,19 @@ class _HomeScreenState extends State<HomeScreen> {
             items: [
               BottomNavigationBarItem(
                   icon: ImageIcon(AssetImage("assests/images/ic_moshaf.png")),
-                  label: "Quran"),
+                  label: AppLocalizations.of(context)!.quranTitle),
               BottomNavigationBarItem(
                   icon: ImageIcon(AssetImage("assests/images/ic_ahadeth.png")),
-                  label: "Hadeth"),
+                  label: AppLocalizations.of(context)!.hadethTitle),
               BottomNavigationBarItem(
                   icon: ImageIcon(AssetImage("assests/images/ic_sebha.png")),
-                  label: "Tasabeh"),
+                  label: AppLocalizations.of(context)!.tasbehTitle),
               BottomNavigationBarItem(
                   icon: ImageIcon(AssetImage("assests/images/ic_radio.png")),
-                  label: "Radio"),
+                  label: AppLocalizations.of(context)!.radioTitle),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.settings),
+                  label: AppLocalizations.of(context)!.settingTitle),
             ],
           ),
         ),
@@ -59,5 +63,5 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  List<Widget> taps = [QuranTap(), HadethTap(), TasbehTap(), RadioTap()];
+  List<Widget> taps = [QuranTap(), HadethTap(), TasbehTap(), RadioTap(),SettingTap()];
 }
