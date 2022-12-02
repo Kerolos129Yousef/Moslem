@@ -40,6 +40,7 @@ class MyApp extends StatelessWidget {
       ],
       locale: Locale(settingsProvider.currentLange),
       theme: MyTheme.lightTheme,
+      darkTheme: MyTheme.darkTheme,
       themeMode: settingsProvider.currentTheme,
       initialRoute: HomeScreen.routeName,
       routes: {

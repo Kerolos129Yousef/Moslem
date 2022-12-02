@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
-
+import 'package:moslem/Home/providers/setting_provider.dart';
+import 'package:provider/provider.dart';
 class TasbehTap extends StatefulWidget {
   @override
   State<TasbehTap> createState() => _TasbehTapState();
@@ -12,9 +13,10 @@ List<String> Elad3ia = ["سُبْحَانَ اللَّهِ.","سُبْحَانَ
 int count=0;
   @override
   Widget build(BuildContext context) {
+    var settingProvider = Provider.of<SettingProvider>(context);
     return Column(
       children: [
-        Center(child: Image.asset("assests/images/head_sebha_logo.png")),
+        Center(child: Image.asset(settingProvider.isDarkMode()?"assests/images/head_sebha_dark.png":"assests/images/head_sebha_logo.png")),
         InkWell(
           splashColor: Colors.transparent,
           highlightColor: Colors.black12,
@@ -32,7 +34,7 @@ int count=0;
           },
           child: Container(
               color: Colors.transparent,
-              child: Center(child: Image.asset("assests/images/body_sebha_logo.png"))),
+              child: Center(child: Image.asset(settingProvider.isDarkMode()?"assests/images/body_sebha_dark.png":"assests/images/body_sebha_logo.png"))),
         )
         ,
         Container(

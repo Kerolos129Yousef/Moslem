@@ -6,6 +6,8 @@ import 'package:moslem/Home/quran/quran_tap.dart';
 import 'package:moslem/Home/radio/radio_tap.dart';
 import 'package:moslem/Home/tasbeh/tasbeh_tap.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:moslem/Home/providers/setting_provider.dart';
+import 'package:provider/provider.dart';
 class HomeScreen extends StatefulWidget {
   static const String routeName = "Home";
 
@@ -18,10 +20,11 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var settingProvider=Provider.of<SettingProvider>(context);
     return Container(
       decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage("assests/images/background_pattren.png"),fit: BoxFit.fill)),
+              image: AssetImage(settingProvider.getMainBackGround()),fit: BoxFit.fill)),
       child: Scaffold(
         appBar: AppBar(
           title: Center(
@@ -33,7 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
         body: taps[selectedIndex],
         bottomNavigationBar: Theme(
           data: Theme.of(context)
-              .copyWith(canvasColor: Theme.of(context).primaryColor),
+              .copyWith(canvasColor: Theme.of(context).bottomNavigationBarTheme.backgroundColor),
           child: BottomNavigationBar(
             currentIndex: selectedIndex,
             onTap: (index) {

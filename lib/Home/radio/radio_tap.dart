@@ -1,11 +1,13 @@
 
 import 'package:flutter/material.dart';
-
+import 'package:moslem/Home/providers/setting_provider.dart';
+import 'package:provider/provider.dart';
 class RadioTap extends StatelessWidget {
 
 
   @override
   Widget build(BuildContext context) {
+    var settingProvider = Provider.of<SettingProvider>(context);
     return Column(
       children: [
         SizedBox(height: 150,),
@@ -29,7 +31,7 @@ class RadioTap extends StatelessWidget {
                 onPressed: (){
 
                 },
-                icon: Icon(Icons.arrow_left,size: 50,),
+                icon: Icon(Icons.arrow_left,size: 50,color:settingProvider.isDarkMode()?Theme.of(context).primaryColor:Colors.black,),
               ),
               IconButton(
                 splashColor: Colors.transparent,
@@ -37,7 +39,7 @@ class RadioTap extends StatelessWidget {
                 onPressed: (){
 
                 },
-                icon: Icon(Icons.pause,size: 50,),
+                icon: Icon(Icons.pause,size: 50,color:settingProvider.isDarkMode()?Theme.of(context).primaryColor:Colors.black,),
               ),
               IconButton(
                 splashColor: Colors.transparent,
@@ -45,7 +47,7 @@ class RadioTap extends StatelessWidget {
                 onPressed: (){
 
                 },
-                icon: Icon(Icons.arrow_right,size: 50,),
+                icon: Icon(Icons.arrow_right,size: 50,color:settingProvider.isDarkMode()?Theme.of(context).primaryColor:Colors.black,),
               )
             ],
           ),

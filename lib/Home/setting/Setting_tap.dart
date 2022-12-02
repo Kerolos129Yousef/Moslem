@@ -37,7 +37,7 @@ class _SettingTapState extends State<SettingTap> {
                     border: Border.all(color: Theme.of(context).primaryColor),
                     borderRadius: BorderRadius.circular(10),
                     color: Colors.white),
-                child: Text(settingProvider.currentLange=="ar"?"العربيه":"English")),
+                child: Text(settingProvider.currentLange=="ar"?"العربيه":"English",style: TextStyle(color: Theme.of(context).primaryColor),)),
           ),
           SizedBox(height: 20,),
           Container(
@@ -58,7 +58,7 @@ class _SettingTapState extends State<SettingTap> {
                     border: Border.all(color: Theme.of(context).primaryColor),
                     borderRadius: BorderRadius.circular(10),
                     color: Colors.white),
-                child: Text(AppLocalizations.of(context)!.light)),
+                child: Text(settingProvider.currentTheme==ThemeMode.light?AppLocalizations.of(context)!.light:AppLocalizations.of(context)!.dark,style: TextStyle(color: Theme.of(context).primaryColor),)),
           )
         ],
       ),

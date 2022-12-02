@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'hadeth_widget.dart';
+import 'package:moslem/Home/providers/setting_provider.dart';
+import 'package:provider/provider.dart';
 
 class HadethTap extends StatefulWidget {
   @override
@@ -14,6 +16,7 @@ class _HadethTapState extends State<HadethTap> {
 
   @override
   Widget build(BuildContext context) {
+    var settingProvider = Provider.of<SettingProvider>(context);
     if(allahadeth.isEmpty)
     readHadethFile();
     return allahadeth.isEmpty?Center(child: CircularProgressIndicator(color: Theme.of(context).primaryColor,)): Column(
